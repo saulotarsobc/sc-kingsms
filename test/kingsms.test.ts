@@ -25,7 +25,7 @@ describe("KingSMSClient (integration)", () => {
 
     const res = await client.sendSMS({
       numero: to as string,
-      msg: "Teste via Vitest",
+      msg: `Teste via Vitest às ${new Date().toISOString()}`,
     });
     expect(res.status).toBe("success");
     expect(res.id).toBeTruthy();
