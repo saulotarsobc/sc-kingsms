@@ -1,0 +1,68 @@
+{
+  "name": "sc-kingsms",
+  "version": "1.0.0",
+  "description": "Cliente TypeScript/Node para a API da KingSMS (envio de SMS, status e saldo)",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rimraf dist || del dist",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "dts": true,
+    "sourcemap": true,
+    "clean": true,
+    "target": "es2020",
+    "minify": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LLBI-solucoes/sc-kingsms.git"
+  },
+  "keywords": [
+    "sms",
+    "kingsms",
+    "api",
+    "brasil",
+    "typescript",
+    "node"
+  ],
+  "author": "LLBI Soluções",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LLBI-solucoes/sc-kingsms/issues"
+  },
+  "homepage": "https://github.com/LLBI-solucoes/sc-kingsms#readme",
+  "dependencies": {
+    "axios": "^1.7.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "dotenv": "^17.2.1",
+    "tsup": "^8.2.4",
+    "tsx": "^4.20.4",
+    "typescript": "^5.9.2"
+  }
+}
