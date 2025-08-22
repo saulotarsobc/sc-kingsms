@@ -58,9 +58,9 @@ npm run coverage
 Há testes que chamam a API real usando variáveis do arquivo `.env`:
 
 ```
-KINK_SMS_USER=user
-KINK_SMS_TOKEN=token
-KINK_SMS_TO=phone_number
+KING_SMS_USER=user
+KING_SMS_TOKEN=token
+KING_SMS_TO=phone_number
 ```
 
 Para rodar os testes de integração sem envio de SMS (saldo e conexões):
