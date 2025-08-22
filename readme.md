@@ -22,7 +22,7 @@ await client.sendSMS({ numero: "11999999999", msg: "teste" });
 await client.checkStatus("189");
 
 // Saldo
-await client.getAmont();
+await client.getAmount();
 ```
 
 Parâmetros suportados em sendSMS: numero (string ou string[]), msg, campanha?, data? (DD-MM-YYYY), hora? (HH:mm).

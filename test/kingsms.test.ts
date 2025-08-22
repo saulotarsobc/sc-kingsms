@@ -9,11 +9,11 @@ const to = process.env.KING_SMS_TO!;
 let messageId: string | undefined;
 
 describe("KingSMSClient (integration)", () => {
-  it("check balance (getAmont) succeeds", async () => {
+  it("check balance (getAmount) succeeds", async () => {
     const client = new KingSMSClient({ login, token });
-    const res = await client.getAmont();
+    const res = await client.getAmount();
 
-    console.log("getAmont response:", res);
+    console.log("getAmount response:", res);
 
     expect(res.status).toBe("success");
     expect(res.cause).toMatch(/Credit|Saldo|SMS/i);

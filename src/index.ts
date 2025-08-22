@@ -26,7 +26,7 @@ export type BalanceResponse = {
 
 export interface KingSMSClientOptions {
   login: string;
-  token?: string; // not required for checkStatus, required for sendSMS and getAmont
+  token?: string; // not required for checkStatus, required for sendSMS and getAmount
   baseURL?: string; // override for testing
 }
 
@@ -110,7 +110,7 @@ export class KingSMSClient {
   /**
    * Get account balance (saldo).
    */
-  async getAmont(): Promise<BalanceResponse> {
+  async getAmount(): Promise<BalanceResponse> {
     // keeping method name as requested
     if (!this.token) {
       throw new Error("token is required to get balance");
@@ -123,7 +123,7 @@ export class KingSMSClient {
     });
 
     if (data.status === "error") {
-      throw new Error(data.cause || "KingSMS: getAmont failed");
+      throw new Error(data.cause || "KingSMS: getAmount failed");
     }
 
     return data;
