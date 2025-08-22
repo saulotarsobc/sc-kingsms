@@ -10,11 +10,9 @@ let messageId: string | undefined;
 
 describe("KingSMSClient (integration)", () => {
   it("check balance (getAmont) succeeds", async () => {
-    const client = new KingSMSClient({
-      login: login as string,
-      token: token as string,
-    });
+    const client = new KingSMSClient({ login, token });
     const res = await client.getAmont();
+
     console.log("getAmont response:", res);
 
     expect(res.status).toBe("success");
@@ -22,11 +20,7 @@ describe("KingSMSClient (integration)", () => {
   });
 
   it("send SMS (guarded, may incur cost)", async () => {
-    const client = new KingSMSClient({
-      login: login,
-      token: token,
-    });
-
+    const client = new KingSMSClient({ login, token });
     const res = await client.sendSMS({
       numero: to,
       msg: `Teste via Vitest às ${new Date().toISOString()}`,
@@ -44,11 +38,7 @@ describe("KingSMSClient (integration)", () => {
   });
 
   it("check status (guarded, may incur cost)", async () => {
-    const client = new KingSMSClient({
-      login: login,
-      token: token,
-    });
-
+    const client = new KingSMSClient({ login, token });
     const res = await client.checkStatus(messageId!);
 
     console.log("checkStatus response:", res);
