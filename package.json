@@ -1,6 +1,6 @@
 {
   "name": "sc-kingsms",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cliente TypeScript/Node para a API da KingSMS (envio de SMS, status e saldo)",
   "type": "module",
   "main": "./dist/index.js",
