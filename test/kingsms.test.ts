@@ -6,6 +6,8 @@ const login = process.env.KING_SMS_USER!;
 const token = process.env.KING_SMS_TOKEN!;
 const to = process.env.KING_SMS_TO!;
 
+let messageId: string | undefined;
+
 describe("KingSMSClient (integration)", () => {
   it("check balance (getAmont) succeeds", async () => {
     const client = new KingSMSClient({
@@ -37,5 +39,20 @@ describe("KingSMSClient (integration)", () => {
 
     const status = await client.checkStatus(res.id!);
     expect(["success", "pending", "error"]).toContain(status.status);
+
+    messageId = res.id;
+  });
+
+  it("check status (guarded, may incur cost)", async () => {
+    const client = new KingSMSClient({
+      login: login,
+      token: token,
+    });
+
+    const res = await client.checkStatus(messageId!);
+
+    console.log("checkStatus response:", res);
+
+    expect(["success", "pending"]).toContain(res.status);
   });
 });
