@@ -80,9 +80,11 @@ export class KingSMSClient {
     const { data } = await this.http.get<SendSMSResponse>("", {
       params: query,
     });
+
     if (data.status === "error") {
       throw new Error(data.cause || "KingSMS: sendSMS failed");
     }
+
     return data;
   }
 
@@ -92,12 +94,16 @@ export class KingSMSClient {
    */
   async checkStatus(id: string): Promise<StatusResponse> {
     if (!id) throw new Error("id is required");
+
     const query = { acao: "reportsms", login: this.login, id };
     const { data } = await this.http.get<StatusResponse>("", { params: query });
+
     // API may return { status: "pending", cause: "SMS still in the send Queue" }
+
     if (data.status === "error") {
       throw new Error(data.cause || "KingSMS: checkStatus failed");
     }
+
     return data;
   }
 
@@ -109,13 +115,17 @@ export class KingSMSClient {
     if (!this.token) {
       throw new Error("token is required to get balance");
     }
+
     const query = { acao: "saldo", login: this.login, token: this.token };
+
     const { data } = await this.http.get<BalanceResponse>("", {
       params: query,
     });
+
     if (data.status === "error") {
       throw new Error(data.cause || "KingSMS: getAmont failed");
     }
+
     return data;
   }
 }

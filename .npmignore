@@ -1,0 +1,51 @@
+# .npmignore gerado automaticamente para o projeto sc-kingsms
+# Observação: o package.json já especifica "files": ["dist"] — isto garante que o diretório
+# dist seja incluído. Ainda assim é útil excluir artefatos de desenvolvimento e arquivos grandes.
+
+# Node
+node_modules/
+
+# Código fonte e configs de desenvolvimento
+src/
+test/
+tests/
+.vscode/
+.idea/
+.vs/
+*.ts
+*.tsx
+tsconfig.json
+vitest.config.ts
+tsconfig.*.json
+
+# Ferramentas de build / cache
+dist/**/*.map
+.cache/
+.nyc_output/
+coverage/
+coverage-final.json
+
+# Arquivos de editor / OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Configs e secrets locais
+.env
+.env.*
+
+# Metadados de CI / infra de projeto
+.github/
+.gitlab-ci.yml
+.devcontainer/
+
+# Assets e documentos que não precisam ir ao pacote (se quiser manter, remova a linha)
+assets/
+
+# Arquivos de lock (opcionalmente) e debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Não ignorar: README.md, LICENSE, package.json e dist/ (são necessários no pacote)
+# Se quiser validar o que será publicado, rode: `npm pack --dry-run`

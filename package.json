@@ -43,7 +43,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LLBI-solucoes/sc-kingsms.git"
+    "url": "git+https://github.com/saulotarsobc/sc-kingsms.git"
   },
   "keywords": [
     "sms",
@@ -56,9 +56,9 @@
   "author": "LLBI Soluções",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LLBI-solucoes/sc-kingsms/issues"
+    "url": "https://github.com/saulotarsobc/sc-kingsms/issues"
   },
-  "homepage": "https://github.com/LLBI-solucoes/sc-kingsms#readme",
+  "homepage": "https://github.com/saulotarsobc/sc-kingsms#readme",
   "dependencies": {
     "axios": "^1.7.7"
   },
