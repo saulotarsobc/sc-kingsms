@@ -33,6 +33,48 @@ Parâmetros suportados em sendSMS: numero (string ou string[]), msg, campanha?, 
 npm run build
 ```
 
+### Testes
+
+Rodar a suíte de testes com Vitest:
+
+```
+npm run test
+```
+
+Assistir em modo watch:
+
+```
+npm run test:watch
+```
+
+Gerar cobertura de código:
+
+```
+npm run coverage
+```
+
+### Testes de integração (reais)
+
+Há testes que chamam a API real usando variáveis do arquivo `.env`:
+
+```
+KINK_SMS_USER=user
+KINK_SMS_TOKEN=token
+KINK_SMS_TO=phone_number
+```
+
+Para rodar os testes de integração sem envio de SMS (saldo e conexões):
+
+```
+npm run test:int
+```
+
+Para incluir o envio de SMS real (pode gerar custo), ative explicitamente:
+
+```
+npm run test:int:send
+```
+
 ### Publicação
 
 Atualize a versão no package.json e publique:
